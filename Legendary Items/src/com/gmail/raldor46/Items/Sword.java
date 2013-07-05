@@ -12,7 +12,7 @@ public class Sword {
 	//info
 	private String Name;
 	private Material Mat;
-	private List<String> Lore;
+	private List<String> Lore = new ArrayList<String>();
 	//Enchantment
 	private int Sharpness_Level = 0;
 	private int Smite_Level = 0;
@@ -53,6 +53,7 @@ public class Sword {
 		ItemMeta sword_meta = sword.getItemMeta();
 		sword_meta.setDisplayName(Name);
 		sword_meta.setLore(Lore);
+		sword.setItemMeta(sword_meta);
 		
 		genEnchantments();
 		

@@ -8,5 +8,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Fabian/Documents/minecraft things/minecraft dev/server dev/apis/bukkit/SQLibrary.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Fabian/Documents/minecraft things/minecraft dev/server dev/apis/JAVA/mysql-connector-java-5.1.14-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

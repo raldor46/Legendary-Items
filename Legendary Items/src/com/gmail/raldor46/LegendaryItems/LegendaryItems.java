@@ -25,15 +25,15 @@ public class LegendaryItems extends JavaPlugin {
 							try {
 								if(swords.validName(args[2])){
 									ItemStack sword = swords.genSword(args[2]);
-									if(sword != null){
-										((Player) sender).getInventory().addItem(sword);
-										return true;
+										if (sword != null){
+											((Player) sender).getInventory().addItem(sword);
+											return true;
+										}
+										else{
+											sender.sendMessage("There was an error creating the sword.");
+											return false;
+										}
 									}
-									else{
-										sender.sendMessage("unable to create sword");
-										return false;
-									}
-								}
 								else{
 									sender.sendMessage("Invalid Name");
 									return false;
