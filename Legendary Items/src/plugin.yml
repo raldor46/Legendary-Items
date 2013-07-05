@@ -1,0 +1,9 @@
+  name: Legendary Items
+  main: com.gmail.raldor46.LegendaryItems.LegendaryItems
+  version: 0.1
+  commands:
+    Legendary:
+      description: This is a demo command.
+      usage: /<command> [type] [action] [name]
+      permission: LegendaryItems.items
+      permission-message: You don't have <permission>
