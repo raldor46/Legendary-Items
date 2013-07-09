@@ -12,7 +12,8 @@ public class Sword {
 	//info
 	private String Name;
 	private Material Mat;
-	private List<String> Lore = new ArrayList<String>();
+	private String MatStr;
+	private List<String> Lore;
 	//Enchantment
 	private int Sharpness_Level = 0;
 	private int Smite_Level = 0;
@@ -32,7 +33,9 @@ public class Sword {
 	private ArrayList<Integer> enchantmentIds = new ArrayList<Integer>();
 	
 	public Sword(String name, String material, String lore) {
+		Lore = new ArrayList<String>();
 		Name = name;
+		MatStr = material;
 		if (material.equalsIgnoreCase("Diamond"))
 			Mat = Material.DIAMOND_SWORD;
 		else if (material.equalsIgnoreCase("Gold"))
@@ -46,6 +49,23 @@ public class Sword {
 		else
 			Mat = Material.DIAMOND_SWORD;
 		Lore.add(lore);
+	}
+	public Sword(String name, String material, List<String> lore) {
+		Name = name;
+		MatStr = material;
+		if (material.equalsIgnoreCase("Diamond"))
+			Mat = Material.DIAMOND_SWORD;
+		else if (material.equalsIgnoreCase("Gold"))
+			Mat = Material.GOLD_SWORD;
+		else if (material.equalsIgnoreCase("Iron"))
+			Mat = Material.IRON_SWORD;
+		else if (material.equalsIgnoreCase("Stone"))
+			Mat = Material.STONE_SWORD;
+		else if (material.equalsIgnoreCase("Wood"))
+			Mat = Material.WOOD_SWORD;
+		else
+			Mat = Material.DIAMOND_SWORD;
+		Lore = lore;
 	}
 	
 	public ItemStack createSword(){
@@ -64,6 +84,14 @@ public class Sword {
 
 		return sword;
 	}
+//	
+//	public List<String> genLore(){
+//		List<String> LoreList = new ArrayList<String>();
+//		if(Lore.get(0).length()>20){
+//			LoreList.add(lore);
+//			lore = "";
+//		}
+//	}
 	
 	public void genEnchantments(){
 		if (Sharpness_Level > 0){
@@ -111,7 +139,19 @@ public class Sword {
 		Mat = material;
 	}
 	
+	public String getMaterialStr() {
+		return MatStr;
+	}
+	public void setMaterialStr(String matStr) {
+		MatStr = matStr;
+	}
+	
 	public String getLore() {
+//		String lore = "";
+//		for(String s : Lore){
+//			lore += s;
+//			lore += " ";
+//		}
 		return Lore.get(0);
 	}
 	public void setLore(String lore) {
